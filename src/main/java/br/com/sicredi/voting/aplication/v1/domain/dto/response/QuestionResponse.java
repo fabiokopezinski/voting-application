@@ -10,5 +10,5 @@ import lombok.Getter;
 public class QuestionResponse {
 	
 	private Long questionId;
-	private String tema;
+	private String subject;
 }

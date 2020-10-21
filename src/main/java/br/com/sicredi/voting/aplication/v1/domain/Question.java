@@ -9,6 +9,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.QuestionResponse;
+import br.com.sicredi.voting.aplication.v1.dto.request.QuestionRequest;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -26,11 +27,16 @@ public class Question implements DomainEntity<QuestionResponse> {
 	@SequenceGenerator(name = "question_seq", allocationSize = 1)
 	private Long questionId;
 
+	
 	@Column(unique = true, name = "TEMA", length = 100, nullable = false)
 	private String subject;
 
+	public static Question of(QuestionRequest request) {
+		return Question.builder().subject(request.getSubject()).build();
+	}
+
 	@Override
 	public QuestionResponse toDTO() {
-		return QuestionResponse.builder().questionId(this.questionId).tema(this.subject).build();
+		return QuestionResponse.builder().questionId(this.questionId).subject(this.subject).build();
 	}
 }

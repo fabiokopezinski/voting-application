@@ -18,11 +18,10 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 @Target({ ElementType.METHOD, ElementType.ANNOTATION_TYPE, ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 @ApiResponses(value = {
-		@ApiResponse(responseCode = "200", description = "Retorna os associado", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = AssociateResponse.class))),
-		@ApiResponse(responseCode = "401", description = "Acesso não autorizado",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)),
-		@ApiResponse(responseCode = "404", description = "Associado não encontrado",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = BusinessExceptionBody.class))),
+		@ApiResponse(responseCode = "201", description = "Associado inserido", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = AssociateResponse.class))),
+		@ApiResponse(responseCode = "400", description = "Já possui cadastro",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = BusinessExceptionBody.class))),
 		@ApiResponse(responseCode = "500", description = "Sistema indisponível",content=@Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) })
-@Operation(summary = Constants.ASSOCIATES_SEARCH_SUMMARRY, description = Constants.ASSOCIATES_SEARCH_DESCRIPTION)
-public @interface AssociateResponseGetIdCodeStandard {
+@Operation(summary = Constants.ASSOCIATES_INSERT_SUMMARY, description = Constants.ASSOCIADO_INSERT_DESCRIPTION)
+public @interface AssociatesResponsePostCodeStandard {
 
 }
