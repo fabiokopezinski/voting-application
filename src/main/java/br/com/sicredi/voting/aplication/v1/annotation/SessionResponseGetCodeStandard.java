@@ -8,7 +8,6 @@ import java.lang.annotation.Target;
 import org.springframework.http.MediaType;
 
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.QuestionResponse;
-import br.com.sicredi.voting.aplication.v1.exception.BusinessException.BusinessExceptionBody;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -18,10 +17,10 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 @Target({ ElementType.METHOD, ElementType.ANNOTATION_TYPE, ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 @ApiResponses(value = {
-		@ApiResponse(responseCode = "200", description = "Retorna as pautas existentes", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = QuestionResponse.class))),
-		@ApiResponse(responseCode = "401", description = "Sistema indisponivel",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = BusinessExceptionBody.class))),
+		@ApiResponse(responseCode = "200", description = "Retorna as sessoes existentes", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = QuestionResponse.class))),
+		@ApiResponse(responseCode = "401", description = "Sistema indisponivel"),
 		@ApiResponse(responseCode = "500", description = "Sistema indisponível",content=@Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) })
-@Operation(summary = Constants.MEETING_AGENDA_LIST_SUMMARY, description = Constants.MEETING_AGENDA_LIST_DESCRIPTION)
-public @interface QuestionResponseGetCodeStandard {
+@Operation(summary = Constants.SESSION_LIST_SUMMARY, description = Constants.SESSION_LIST_DESCRIPTION)
+public @interface SessionResponseGetCodeStandard {
 
 }

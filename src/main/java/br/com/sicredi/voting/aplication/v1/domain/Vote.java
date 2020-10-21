@@ -14,6 +14,7 @@ import javax.persistence.Table;
 
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.VoteResponse;
 import br.com.sicredi.voting.aplication.v1.domain.enums.VoteEnumeration;
+import br.com.sicredi.voting.aplication.v1.dto.request.VoteRequest;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -42,6 +43,10 @@ public class Vote implements DomainEntity<VoteResponse> {
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "CD_PAUTA", referencedColumnName = "CD_PAUTA", insertable = false, updatable = false)
 	private Question question;
+	
+	public static Vote of(VoteRequest response) {
+		return Vote.builder().build();
+	}
 
 	@Override
 	public VoteResponse toDTO() {

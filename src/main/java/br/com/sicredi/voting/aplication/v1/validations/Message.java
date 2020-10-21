@@ -7,10 +7,12 @@ import br.com.sicredi.voting.aplication.v1.exception.BusinessException;
 public enum Message {
 
 	NOT_FOUND("Não encontrado", HttpStatus.NOT_FOUND),
+	SESSION_NOT_FOUND("Não encontrado",HttpStatus.BAD_REQUEST),
 	MEETING_AGENDA_EXISTE("Pauta já cadastrado",HttpStatus.BAD_REQUEST),
 	MEETING_AGENDA_NOT_FOUND("Pauta não existe",HttpStatus.BAD_REQUEST),
 	ASSOCIATE_EXISTE("Associado já cadastrado",HttpStatus.BAD_REQUEST),
-	ASSOCIATE_NOT_FOUND("Associado não encontrado",HttpStatus.NOT_FOUND);
+	ASSOCIATE_NOT_FOUND("Associado não encontrado",HttpStatus.NOT_FOUND),
+	ASSOCIATE_MEMBER_HAS_ALREADY_VOTED("Associado não encontrado",HttpStatus.NOT_FOUND);
 	
 	private String value;
 	private String description;

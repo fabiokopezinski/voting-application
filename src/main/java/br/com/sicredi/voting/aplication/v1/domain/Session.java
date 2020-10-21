@@ -8,9 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -23,6 +21,7 @@ import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 @Getter
@@ -49,9 +48,9 @@ public class Session implements DomainEntity<SessionResponse> {
 	@Column(name = "VOTO_NAO", nullable = true)
 	private Long votesNo;
 
-	@ManyToOne
-	@JoinColumn(name = "CD_PAUTA", referencedColumnName = "CD_PAUTA", insertable = false, updatable = false)
-	private Question question;
+	@Setter
+	@Column(name = "CD_PAUTA", nullable = true)
+	private Long question;
 
 	@ManyToMany
 	private List<Vote> votes;
@@ -65,10 +64,10 @@ public class Session implements DomainEntity<SessionResponse> {
 	@Override
 	public SessionResponse toDTO() {
 		return SessionResponse.builder().sessionId(this.sessionId).duration(this.duration)
-				.votes(this.votes).votesYes(getYes()).votesNo(getNo()).build();
+				.votesYes(getYes()).votesNo(getNo()).build();
 	}
 
-	public void addQuestion(Question questionRequest) {
+	public void addQuestion(Long questionRequest) {
 		this.question=questionRequest;
 	}
 	

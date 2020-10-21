@@ -1,5 +1,6 @@
 package br.com.sicredi.voting.aplication.v1.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -31,7 +32,7 @@ import lombok.NoArgsConstructor;
 public class Question implements DomainEntity<QuestionResponse> {
 
 	@Id
-	@Column(name = "CD_PAUTA", nullable = false, columnDefinition = "NUMERIC(9)")
+	@Column(name = "CD_PAUTA", nullable = false)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "question_seq")
 	@SequenceGenerator(name = "question_seq", allocationSize = 1)
 	private Long questionId;
@@ -47,7 +48,7 @@ public class Question implements DomainEntity<QuestionResponse> {
 	private List<Session> sessions;
 
 	public static Question of(QuestionRequest request) {
-		return Question.builder().subject(request.getSubject()).build();
+		return Question.builder().subject(request.getSubject()).sessions(new ArrayList<Session>()).build();
 	}
 
 	@Override
