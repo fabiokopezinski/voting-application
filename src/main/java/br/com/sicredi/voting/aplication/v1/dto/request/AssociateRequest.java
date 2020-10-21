@@ -5,6 +5,7 @@ import javax.validation.constraints.Size;
 
 import br.com.sicredi.voting.aplication.v1.validations.OnCreate;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,6 +14,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class AssociateRequest {
 
 	@Size(groups={OnCreate.class},max = 14, message = "O campo 'cpf' está inválido no corpo da requisição")

@@ -38,6 +38,10 @@ public class Vote implements DomainEntity<VoteResponse> {
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "CD_ASSOCIADO", referencedColumnName = "CD_ASSOCIADO", insertable = false, updatable = false)
 	private Associate associate;
+	
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "CD_PAUTA", referencedColumnName = "CD_PAUTA", insertable = false, updatable = false)
+	private Question question;
 
 	@Override
 	public VoteResponse toDTO() {

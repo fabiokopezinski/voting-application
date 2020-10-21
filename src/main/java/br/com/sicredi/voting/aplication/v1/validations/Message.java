@@ -8,6 +8,7 @@ public enum Message {
 
 	NOT_FOUND("Não encontrado", HttpStatus.NOT_FOUND),
 	MEETING_AGENDA_EXISTE("Pauta já cadastrado",HttpStatus.BAD_REQUEST),
+	MEETING_AGENDA_NOT_FOUND("Pauta não existe",HttpStatus.BAD_REQUEST),
 	ASSOCIATE_EXISTE("Associado já cadastrado",HttpStatus.BAD_REQUEST),
 	ASSOCIATE_NOT_FOUND("Associado não encontrado",HttpStatus.NOT_FOUND);
 	
