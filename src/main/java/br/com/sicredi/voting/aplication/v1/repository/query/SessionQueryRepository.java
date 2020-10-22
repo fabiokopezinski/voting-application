@@ -1,6 +1,7 @@
 package br.com.sicredi.voting.aplication.v1.repository.query;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -18,4 +19,6 @@ public interface SessionQueryRepository extends JpaRepository<Session, Long> {
 			+ "sr.votesNo "
 			+ " ) FROM Session sr ")
 	List<SessionResponse> findAllSession();
+	Optional<Session> findBySessionIdAndAssociate_AssociateId(Long sessionId,Long associateId);
+	
 }

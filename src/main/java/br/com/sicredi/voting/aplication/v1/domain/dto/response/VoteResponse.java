@@ -10,7 +10,6 @@ import lombok.Getter;
 @Builder
 public class VoteResponse {
 
-	private Long voteId;
 	private VoteEnumeration vote;
 	private AssociateResponse associate; 
 }

@@ -11,7 +11,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.com.sicredi.voting.aplication.v1.annotation.SessionResponsePostCodeStandard;
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.SessionResponse;
+import br.com.sicredi.voting.aplication.v1.domain.dto.response.VoteResponse;
 import br.com.sicredi.voting.aplication.v1.dto.request.SessionRequest;
+import br.com.sicredi.voting.aplication.v1.dto.request.VoteRequest;
 import br.com.sicredi.voting.aplication.v1.service.command.SessionCommandService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
@@ -31,5 +33,11 @@ public class SessionCommandController {
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{sessionId}")
 				.buildAndExpand(response.getSessionId()).toUri();
 		return ResponseEntity.created(uri).body(response);
+	}
+	
+	@PostMapping("/votes")
+	public ResponseEntity<VoteResponse> insert(@RequestBody VoteRequest voteRequest) {
+		VoteResponse response = service.voting(voteRequest);
+		return ResponseEntity.ok().body(response);
 	}
 }

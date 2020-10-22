@@ -1,17 +1,14 @@
 package br.com.sicredi.voting.aplication.v1.domain;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import org.springframework.data.domain.AbstractAggregateRoot;
 
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.AssociateResponse;
 import br.com.sicredi.voting.aplication.v1.dto.request.AssociateRequest;
@@ -28,7 +25,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = false,of="associateId")
 @Builder
 @Table(name = "TB_ASSOCIADO")
-public class Associate implements DomainEntity<AssociateResponse> {
+public class Associate extends AbstractAggregateRoot<Associate> implements DomainEntity<AssociateResponse> {
 
 	@Id
 	@Column(name = "CD_ASSOCIADO", nullable = false, columnDefinition = "NUMERIC(9)")
@@ -38,9 +35,6 @@ public class Associate implements DomainEntity<AssociateResponse> {
 
 	@Column(length = 15, nullable = false)
 	private String cpf;
-
-	@OneToMany(mappedBy = "associate", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Vote> votes;
 
 	public static Associate of(AssociateRequest request) {
 		return Associate.builder().cpf(request.getCpf()).build();

@@ -1,5 +1,6 @@
 package br.com.sicredi.voting.aplication.v1.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,18 +10,23 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.VoteResponse;
 import br.com.sicredi.voting.aplication.v1.domain.enums.VoteEnumeration;
 import br.com.sicredi.voting.aplication.v1.dto.request.VoteRequest;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = false, of = "voteId")
 @Builder
 @Table(name = "TB_VOTE")
@@ -36,20 +42,21 @@ public class Vote implements DomainEntity<VoteResponse> {
 	@Column(nullable = false)
 	private VoteEnumeration vote;
 
-	@ManyToOne(optional = false)
-	@JoinColumn(name = "CD_ASSOCIADO", referencedColumnName = "CD_ASSOCIADO", insertable = false, updatable = false)
+	@OneToOne(optional = true, cascade = CascadeType.ALL)
+	@JoinColumn(name = "CD_ASSOCIADO", referencedColumnName = "CD_ASSOCIADO")
 	private Associate associate;
+
 	
 	@ManyToOne(optional = false)
-	@JoinColumn(name = "CD_PAUTA", referencedColumnName = "CD_PAUTA", insertable = false, updatable = false)
-	private Question question;
+	@JoinColumn(name = "CD_SESSAO")
+	private Session session;
 	
-	public static Vote of(VoteRequest response) {
-		return Vote.builder().build();
+	public static Vote of(VoteRequest response,Associate associate,Session session) {
+		return Vote.builder().vote(response.getVote()).associate(associate).session(session).build();
 	}
 
 	@Override
 	public VoteResponse toDTO() {
-		return VoteResponse.builder().associate(this.associate.toDTO()).voteId(this.voteId).vote(this.vote).build();
+		return VoteResponse.builder().associate(this.associate.toDTO()).vote(this.vote).build();
 	}
 }

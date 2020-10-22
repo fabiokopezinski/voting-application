@@ -1,16 +1,10 @@
 package br.com.sicredi.voting.aplication.v1.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -21,10 +15,12 @@ import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Getter
 @Entity
 @NoArgsConstructor
+@ToString
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false, of = "questionId")
 @Builder
@@ -37,18 +33,11 @@ public class Question implements DomainEntity<QuestionResponse> {
 	@SequenceGenerator(name = "question_seq", allocationSize = 1)
 	private Long questionId;
 
-	
 	@Column(unique = true, name = "TEMA", length = 100, nullable = false)
 	private String subject;
-	
-	@OneToMany(mappedBy = "question", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Vote> votes;
-	
-	@OneToMany(mappedBy = "question", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Session> sessions;
-
+		
 	public static Question of(QuestionRequest request) {
-		return Question.builder().subject(request.getSubject()).sessions(new ArrayList<Session>()).build();
+		return Question.builder().subject(request.getSubject()).build();
 	}
 
 	@Override

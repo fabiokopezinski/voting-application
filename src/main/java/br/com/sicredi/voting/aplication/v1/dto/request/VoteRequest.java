@@ -28,7 +28,7 @@ public class VoteRequest {
 	@Max(groups = { OnCreate.class}, value = 99999999, message = "O campo 'associateId' está inválido no corpo da requisição")
 	private Long associateId;
 	
-	@Size(groups={OnCreate.class},max = 4, message = "O campo 'vote' está inválido no corpo da requisição")
+	//@Size(groups={OnCreate.class},min=2,max = 4, message = "O campo 'vote' está inválido no corpo da requisição")
 	@NotNull(groups={OnCreate.class},message = "O campo 'vote' é obrigatório no corpo da requisição")
 	private VoteEnumeration vote;
 }
