@@ -1,8 +1,8 @@
 package br.com.sicredi.voting.aplication.feature;
 
 import br.com.sicredi.voting.aplication.v1.domain.Associate;
+import br.com.sicredi.voting.aplication.v1.domain.dto.request.AssociateRequest;
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.AssociateResponse;
-import br.com.sicredi.voting.aplication.v1.dto.request.AssociateRequest;
 
 public class AssociateScenarioFactory {
 

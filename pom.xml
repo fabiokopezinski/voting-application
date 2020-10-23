@@ -124,6 +124,67 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<source>11</source>
+					<target>11</target>
+					<compilerVersion>11</compilerVersion>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.20</version>
+				<configuration>
+					<reuseForks>true</reuseForks>
+					<includes>
+						<include>**/*Test.java</include>
+					</includes>
+					<excludes>
+						<exclude>**/*IT.java</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<id>integration-test</id>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<phase>integration-test</phase>
+						<configuration>
+							<excludes>
+								<exclude>none</exclude>
+							</excludes>
+							<includes>
+								<include>**/*IT.java</include>
+							</includes>
+						</configuration>
+					</execution>
+				</executions>
+
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+			</plugin>
+			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.4</version>
@@ -155,7 +216,6 @@
 										<limit>
 											<counter>CLASS</counter>
 											<value>COVEREDRATIO</value>
-											<minimum>75%</minimum>
 										</limit>
 									</limits>
 								</rule>
@@ -164,12 +224,20 @@
 					</execution>
 				</executions>
 				<configuration>
-					<excludes>br/com/sicredi/voting/aplication/v1/aplication/AplicationApplication.*</excludes>
-					<excludes>br/com/sicredi/voting/aplication/v1/annotation/*/**</excludes>
-					<excludes>br/com/sicredi/voting/aplication/v1/configutarion/*/**</excludes>
-					<excludes>br/com/sicredi/voting/aplication/v1/exception/*/**</excludes>
-					<excludes>br/com/sicredi/voting/aplication/v1/validations/*/**</excludes>
-					<excludes>br/com/sicredi/voting/aplication/v1/repository/*/**</excludes>
+					<excludes>
+						<exclude>br/com/sicredi/voting/aplication/AplicationApplication.*</exclude>
+						<exclude>br/com/sicredi/voting/aplication/v1/annotation/</exclude>
+						<exclude>br/com/sicredi/voting/aplication/v1/client/</exclude>
+						<exclude>br/com/sicredi/voting/aplication/v1/configuration/</exclude>
+						<exclude>br/com/sicredi/voting/aplication/v1/exception/</exclude>
+						<exclude>br/com/sicredi/voting/aplication/v1/validations/</exclude>
+						<exclude>br/com/sicredi/voting/aplication/v1/repository/</exclude>
+						<exclude>br/com/sicredi/voting/aplication/v1/domain/dto/</exclude>
+						<exclude>br/com/sicredi/voting/aplication/v1/domain/enums/</exclude>
+						<exclude>br/com/sicredi/voting/aplication/v1/job/</exclude>
+						<exclude>br/com/sicredi/voting/aplication/v1/service/command/UserInfoCommandService.*</exclude>
+						<exclude>br/com/sicredi/voting/aplication/v1/messaging/</exclude>
+					</excludes>
 				</configuration>
 			</plugin>
 		</plugins>

@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
 import br.com.sicredi.voting.aplication.v1.domain.Associate;
+import br.com.sicredi.voting.aplication.v1.domain.dto.request.AssociateRequest;
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.AssociateResponse;
-import br.com.sicredi.voting.aplication.v1.dto.request.AssociateRequest;
 import br.com.sicredi.voting.aplication.v1.repository.command.AssociateCommandRepository;
 import br.com.sicredi.voting.aplication.v1.repository.query.AssociateQueryRepository;
 import br.com.sicredi.voting.aplication.v1.validations.Message;

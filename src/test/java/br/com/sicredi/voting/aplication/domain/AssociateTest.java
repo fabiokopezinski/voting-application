@@ -32,8 +32,13 @@ public class AssociateTest {
 	}
 
 	@Test
-	public void Associate_ExpectedBuildNoArgs() {
+	public void Associate_ExpectedGetObjects() {
 		assertNotNull(AssociateScenarioFactory.ASSOCIATE_GET);
+	}
+
+	@Test
+	public void Associate_ExpectedBuildNoArgs() {
+		new Associate();
 	}
 
 	@Test
@@ -47,12 +52,12 @@ public class AssociateTest {
 		String expected = Associate.builder().toString();
 		assertEquals(expected, builder.toString());
 	}
-	
+
 	@Test
 	public void Associate_Of() {
 		assertNotNull(AssociateScenarioFactory.ASSOCIATE_OF);
 	}
-	
+
 	@Test
 	public void Associate_ToDTO() {
 		assertNotNull(AssociateScenarioFactory.ASSOCIATE_TODTO);

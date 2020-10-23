@@ -1,4 +1,4 @@
-package br.com.sicredi.voting.aplication.v1.dto.request;
+package br.com.sicredi.voting.aplication.v1.domain.dto.request;
 
 import br.com.sicredi.voting.aplication.v1.domain.enums.VoteEnumeration;
 import lombok.AllArgsConstructor;

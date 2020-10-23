@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import br.com.sicredi.voting.aplication.v1.domain.dto.request.QuestionRequest;
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.QuestionResponse;
-import br.com.sicredi.voting.aplication.v1.dto.request.QuestionRequest;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;

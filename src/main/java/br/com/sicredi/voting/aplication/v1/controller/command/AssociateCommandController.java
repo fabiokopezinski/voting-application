@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.com.sicredi.voting.aplication.v1.annotation.AssociatesResponsePostCodeStandard;
+import br.com.sicredi.voting.aplication.v1.domain.dto.request.AssociateRequest;
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.AssociateResponse;
-import br.com.sicredi.voting.aplication.v1.dto.request.AssociateRequest;
 import br.com.sicredi.voting.aplication.v1.service.command.AssociateCommandService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import javassist.NotFoundException;

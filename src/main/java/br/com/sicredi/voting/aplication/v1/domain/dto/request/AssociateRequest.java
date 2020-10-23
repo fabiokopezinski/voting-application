@@ -1,4 +1,4 @@
-package br.com.sicredi.voting.aplication.v1.dto.request;
+package br.com.sicredi.voting.aplication.v1.domain.dto.request;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -20,7 +20,7 @@ import lombok.Setter;
 public class AssociateRequest {
 
 	@CPF
-	@Size(groups={OnCreate.class},min=1,max = 14, message = "O campo 'cpf' está inválido no corpo da requisição")
-	@NotNull(groups={OnCreate.class},message = "O campo 'cpf' é obrigatório no corpo da requisição")
+	@Size(groups={OnCreate.class},min=1,max = 14, message = "O campo 'cpf' estï¿½ invï¿½lido no corpo da requisiï¿½ï¿½o")
+	@NotNull(groups={OnCreate.class},message = "O campo 'cpf' ï¿½ obrigatï¿½rio no corpo da requisiï¿½ï¿½o")
 	private String cpf;
 }

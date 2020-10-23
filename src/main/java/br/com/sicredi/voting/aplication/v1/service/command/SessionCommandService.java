@@ -12,10 +12,10 @@ import br.com.sicredi.voting.aplication.v1.domain.Associate;
 import br.com.sicredi.voting.aplication.v1.domain.Question;
 import br.com.sicredi.voting.aplication.v1.domain.Session;
 import br.com.sicredi.voting.aplication.v1.domain.Vote;
+import br.com.sicredi.voting.aplication.v1.domain.dto.request.SessionRequest;
+import br.com.sicredi.voting.aplication.v1.domain.dto.request.VoteRequest;
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.SessionResponse;
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.VoteResponse;
-import br.com.sicredi.voting.aplication.v1.dto.request.SessionRequest;
-import br.com.sicredi.voting.aplication.v1.dto.request.VoteRequest;
 import br.com.sicredi.voting.aplication.v1.job.CloseSession;
 import br.com.sicredi.voting.aplication.v1.repository.command.SessionCommandRepository;
 import br.com.sicredi.voting.aplication.v1.repository.query.AssociateQueryRepository;
@@ -66,7 +66,7 @@ public class SessionCommandService {
 		.ifPresent(m->{throw Message.ASSOCIATE_MEMBER_HAS_ALREADY_VOTED.asBusinessException();});
 
 		
-		if (userInfoCommandService.isAbleToVote(associate.getCpf())) {
+		if (userInfoCommandService.isAbleToVote(associate.getCpf())) { 
 			throw Message.ASSOCIATE_NOT_VOTE.asBusinessException();
 		}
 

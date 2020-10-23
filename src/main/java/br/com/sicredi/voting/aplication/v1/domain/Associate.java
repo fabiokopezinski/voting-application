@@ -10,8 +10,8 @@ import javax.persistence.Table;
 
 import org.springframework.data.domain.AbstractAggregateRoot;
 
+import br.com.sicredi.voting.aplication.v1.domain.dto.request.AssociateRequest;
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.AssociateResponse;
-import br.com.sicredi.voting.aplication.v1.dto.request.AssociateRequest;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;

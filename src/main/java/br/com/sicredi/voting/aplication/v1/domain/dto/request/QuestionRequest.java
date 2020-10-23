@@ -1,4 +1,4 @@
-package br.com.sicredi.voting.aplication.v1.dto.request;
+package br.com.sicredi.voting.aplication.v1.domain.dto.request;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class QuestionRequest {
 
-	@Size(groups={OnCreate.class},min=1,max = 255, message = "O campo 'subject' está inválido no corpo da requisição")
-	@NotNull(groups={OnCreate.class},message = "O campo 'subject' é obrigatório no corpo da requisição")
+	@Size(groups={OnCreate.class},min=1,max = 255, message = "O campo 'subject' estï¿½ invï¿½lido no corpo da requisiï¿½ï¿½o")
+	@NotNull(groups={OnCreate.class},message = "O campo 'subject' ï¿½ obrigatï¿½rio no corpo da requisiï¿½ï¿½o")
 	private String subject;
 }

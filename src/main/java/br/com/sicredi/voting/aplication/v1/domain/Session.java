@@ -20,10 +20,10 @@ import javax.persistence.Table;
 
 import org.springframework.data.domain.AbstractAggregateRoot;
 
+import br.com.sicredi.voting.aplication.v1.domain.dto.request.SessionRequest;
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.SessionResponse;
 import br.com.sicredi.voting.aplication.v1.domain.enums.SessionStatus;
 import br.com.sicredi.voting.aplication.v1.domain.enums.VoteEnumeration;
-import br.com.sicredi.voting.aplication.v1.dto.request.SessionRequest;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;

@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.sicredi.voting.aplication.v1.annotation.QuestionResponsePostCodeStandard;
+import br.com.sicredi.voting.aplication.v1.domain.dto.request.QuestionRequest;
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.QuestionResponse;
-import br.com.sicredi.voting.aplication.v1.dto.request.QuestionRequest;
 import br.com.sicredi.voting.aplication.v1.service.command.QuestionCommandService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import javassist.NotFoundException;
