@@ -1,4 +1,4 @@
-# Projeto de sitemas de pautas
+# Projeto de sistemas de pautas
 
 # Objetivo
 
