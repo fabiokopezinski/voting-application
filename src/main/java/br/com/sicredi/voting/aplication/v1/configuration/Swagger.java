@@ -18,7 +18,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
 		  license = @License(
 		    name = "MIT Licence", 
 		    url = "https://github.com/fabiokopezinski/voting-application/blob/main/LICENSE")),
-		  servers = @Server(url = "http://localhost:8080/v1")
+		  servers = @Server(url = "https://sicredi-pauta.herokuapp.com/v1")
 		)
 public class Swagger {
 
