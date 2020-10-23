@@ -26,8 +26,8 @@ public class Constants {
 	public static final String SESSION_INSERT_SUMMARY="Cadastrar uma sessão";
 	public static final String SESSION_INSERT_DESCRIPTION="Ira começar uma votação";
 	
-	public static final String SESSION_LIST_SUMMARY="Listar sessões";
-	public static final String SESSION_LIST_DESCRIPTION="Ira realizar uma listagem das sessões criadas";
+	public static final String SESSION_LIST_SUMMARY="Listar sessões finalizadas";
+	public static final String SESSION_LIST_DESCRIPTION="Ira realizar uma listagem das sessões finalizadas";
 
 
 }

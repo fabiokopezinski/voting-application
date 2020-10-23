@@ -37,7 +37,7 @@ public class Associate extends AbstractAggregateRoot<Associate> implements Domai
 	private String cpf;
 
 	public static Associate of(AssociateRequest request) {
-		return Associate.builder().cpf(request.getCpf()).build();
+		return Associate.builder().cpf(request.getCpf()).build(); 
 	}
 
 	@Override

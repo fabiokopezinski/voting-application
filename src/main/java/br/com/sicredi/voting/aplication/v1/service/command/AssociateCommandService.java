@@ -1,6 +1,5 @@
 package br.com.sicredi.voting.aplication.v1.service.command;
 
-import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Service;
@@ -27,7 +26,6 @@ public class AssociateCommandService {
 	private AssociateQueryRepository associateQueryRepository;
 
 	@Validated(OnCreate.class)
-	@Transactional
 	public AssociateResponse insert(@Valid AssociateRequest request) throws NotFoundException {
 		associateQueryRepository.findByCpf(request.getCpf()).ifPresent(asr -> {
 			throw Message.ASSOCIATE_EXISTE.asBusinessException();

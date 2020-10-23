@@ -62,7 +62,8 @@ public class SessionCommandService {
 
 		session.addAssociate(associate);
 		
-		sessionQueryRepository.findBySessionIdAndAssociate_AssociateId(voteRequest.getSessionId(), voteRequest.getAssociateId()).ifPresent(m->{throw Message.ASSOCIATE_MEMBER_HAS_ALREADY_VOTED.asBusinessException();});
+		sessionQueryRepository.findBySessionIdAndAssociate_AssociateId(voteRequest.getSessionId(), voteRequest.getAssociateId())
+		.ifPresent(m->{throw Message.ASSOCIATE_MEMBER_HAS_ALREADY_VOTED.asBusinessException();});
 
 		
 		if (userInfoCommandService.isAbleToVote(associate.getCpf())) {

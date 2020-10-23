@@ -2,6 +2,7 @@ package br.com.sicredi.voting.aplication.v1.controller.command;
 
 import java.net.URI;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.com.sicredi.voting.aplication.v1.annotation.SessionResponsePostCodeStandard;
+import br.com.sicredi.voting.aplication.v1.annotation.VoteResponsePostVotesCodeStandard;
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.SessionResponse;
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.VoteResponse;
 import br.com.sicredi.voting.aplication.v1.dto.request.SessionRequest;
@@ -35,9 +37,10 @@ public class SessionCommandController {
 		return ResponseEntity.created(uri).body(response);
 	}
 	
+	@VoteResponsePostVotesCodeStandard
 	@PostMapping("/votes")
 	public ResponseEntity<VoteResponse> insert(@RequestBody VoteRequest voteRequest) {
 		VoteResponse response = service.voting(voteRequest);
-		return ResponseEntity.ok().body(response);
+		return ResponseEntity.status(HttpStatus.CREATED).body(response);
 	}
 }

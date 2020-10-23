@@ -17,7 +17,7 @@ public interface SessionQueryRepository extends JpaRepository<Session, Long> {
 			+ "sr.duration,"
 			+ "sr.votesYes,"
 			+ "sr.votesNo "
-			+ " ) FROM Session sr ")
+			+ " ) FROM Session sr WHERE sr.status=1")
 	List<SessionResponse> findAllSession();
 	Optional<Session> findBySessionIdAndAssociate_AssociateId(Long sessionId,Long associateId);
 	
