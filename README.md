@@ -25,4 +25,4 @@ Crie uma solução de backend para ser executada em nuvem que proveja as seguint
   + Java Message Service
 
 # Executando o projeto
-  + [Heroku](https://sicredi-pauta.herokuapp.com/v1/swagger-ui/index.html?configUrl=/v1/v3/api-docs/swagger-config)
+  + [Heroku](https://sicredi-pauta.herokuapp.com/v1/swagger)
