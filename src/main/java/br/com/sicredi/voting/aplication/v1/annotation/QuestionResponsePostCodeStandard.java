@@ -19,8 +19,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 @Retention(RetentionPolicy.RUNTIME)
 @ApiResponses(value = {
 		@ApiResponse(responseCode = "201", description = "Pauta inserida", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = QuestionResponse.class))),
-		@ApiResponse(responseCode = "400", description = "Já possui pauta cadastrada",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = BusinessExceptionBody.class))),
-		@ApiResponse(responseCode = "500", description = "Sistema indisponível",content=@Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) })
+		@ApiResponse(responseCode = "400", description = "Jï¿½ possui pauta cadastrada",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = BusinessExceptionBody.class))),
+		@ApiResponse(responseCode = "500", description = "Sistema indisponivel",content=@Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) })
 @Operation(summary = Constants.MEETING_AGENDA_INSERT_SUMMARY, description = Constants.MEETING_AGENDA_INSERT_DESCRIPTION)
 public @interface QuestionResponsePostCodeStandard {
 

@@ -11,6 +11,7 @@ import br.com.sicredi.voting.aplication.v1.domain.Session;
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.SessionResponse;
 
 @Repository
+
 public interface SessionQueryRepository extends JpaRepository<Session, Long> {
 
 	@Query(value="SELECT new br.com.sicredi.voting.aplication.v1.domain.dto.response.SessionResponse(sr.sessionId,"

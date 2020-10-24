@@ -8,7 +8,8 @@ import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.info.License;
 import io.swagger.v3.oas.annotations.servers.Server;
 
-@Profile("default")
+
+@Profile("dev")
 @OpenAPIDefinition(
 		  info = @Info(
 		  title = "Api de votação",
@@ -21,9 +22,8 @@ import io.swagger.v3.oas.annotations.servers.Server;
 		  license = @License(
 		    name = "MIT Licence", 
 		    url = "https://github.com/fabiokopezinski/voting-application/blob/main/LICENSE")),
-		  servers = @Server(url = "https://sicredi-pauta.herokuapp.com/v1")
+		  servers = @Server(url = "http://localhost:8887/v1")
 		)
-public class Swagger {
+public class SwaggerDev {
 
-	
 }

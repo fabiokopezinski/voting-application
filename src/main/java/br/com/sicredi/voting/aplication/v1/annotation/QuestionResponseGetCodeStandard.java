@@ -20,7 +20,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 @ApiResponses(value = {
 		@ApiResponse(responseCode = "200", description = "Retorna as pautas existentes", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = QuestionResponse.class))),
 		@ApiResponse(responseCode = "401", description = "Sistema indisponivel",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = BusinessExceptionBody.class))),
-		@ApiResponse(responseCode = "500", description = "Sistema indisponível",content=@Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) })
+		@ApiResponse(responseCode = "500", description = "Sistema indisponivel",content=@Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) })
 @Operation(summary = Constants.MEETING_AGENDA_LIST_SUMMARY, description = Constants.MEETING_AGENDA_LIST_DESCRIPTION)
 public @interface QuestionResponseGetCodeStandard {
 

@@ -12,6 +12,7 @@ import br.com.sicredi.voting.aplication.v1.domain.Question;
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.QuestionResponse;
 
 @Repository
+
 public interface QuestionQueryRepository extends JpaRepository<Question, Long> {
 
 	@Query(value="SELECT new br.com.sicredi.voting.aplication.v1.domain.dto.response.QuestionResponse(qs.questionId,"

@@ -19,8 +19,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 @Retention(RetentionPolicy.RUNTIME)
 @ApiResponses(value = {
 		@ApiResponse(responseCode = "201", description = "Associado inserido", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = AssociateResponse.class))),
-		@ApiResponse(responseCode = "400", description = "Já possui cadastro",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = BusinessExceptionBody.class))),
-		@ApiResponse(responseCode = "500", description = "Sistema indisponível",content=@Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) })
+		@ApiResponse(responseCode = "400", description = "JÃ¡ possui cadastro",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = BusinessExceptionBody.class))),
+		@ApiResponse(responseCode = "500", description = "Sistema indisponivel",content=@Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) })
 @Operation(summary = Constants.ASSOCIATES_INSERT_SUMMARY, description = Constants.ASSOCIADO_INSERT_DESCRIPTION)
 public @interface AssociatesResponsePostCodeStandard {
 

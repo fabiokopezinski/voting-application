@@ -12,6 +12,7 @@ import br.com.sicredi.voting.aplication.v1.domain.Associate;
 import br.com.sicredi.voting.aplication.v1.domain.dto.response.AssociateResponse;
 
 @Repository
+
 public interface AssociateQueryRepository extends JpaRepository<Associate, Long> {
 	
 	@Query(value="SELECT new br.com.sicredi.voting.aplication.v1.domain.dto.response.AssociateResponse(asr.associateId,"

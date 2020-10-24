@@ -19,9 +19,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 @Retention(RetentionPolicy.RUNTIME)
 @ApiResponses(value = {
 		@ApiResponse(responseCode = "200", description = "Retorna os associado", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = AssociateResponse.class))),
-		@ApiResponse(responseCode = "401", description = "Acesso n„o autorizado",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)),
-		@ApiResponse(responseCode = "404", description = "Associado n„o encontrado",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = BusinessExceptionBody.class))),
-		@ApiResponse(responseCode = "500", description = "Sistema indisponÌvel",content=@Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) })
+		@ApiResponse(responseCode = "401", description = "Acesso n√£o autorizado",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)),
+		@ApiResponse(responseCode = "404", description = "Associado n√£o encontrado",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = BusinessExceptionBody.class))),
+		@ApiResponse(responseCode = "500", description = "Sistema indisponivel",content=@Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) })
 @Operation(summary = Constants.ASSOCIATES_SEARCH_SUMMARRY, description = Constants.ASSOCIATES_SEARCH_DESCRIPTION)
 public @interface AssociateResponseGetIdCodeStandard {
 

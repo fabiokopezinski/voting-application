@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import br.com.sicredi.voting.aplication.v1.domain.Vote;
 
 @Repository
+
 public interface VoteCommandRepository extends JpaRepository<Vote, Long>{
 
 	

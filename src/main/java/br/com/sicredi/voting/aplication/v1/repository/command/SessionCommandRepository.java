@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import br.com.sicredi.voting.aplication.v1.domain.Session;
 
 @Repository
+
 public interface SessionCommandRepository extends JpaRepository<Session, Long> {
 
 }

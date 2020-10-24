@@ -18,9 +18,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 @Target({ ElementType.METHOD, ElementType.ANNOTATION_TYPE, ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 @ApiResponses(value = {
-		@ApiResponse(responseCode = "201", description = "Sess„o inserida", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = SessionResponse.class))),
-		@ApiResponse(responseCode = "400", description = "J· possui uma sess„o cadastrada",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = BusinessExceptionBody.class))),
-		@ApiResponse(responseCode = "500", description = "Sistema indisponÌvel",content=@Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) })
+		@ApiResponse(responseCode = "201", description = "Sess√£o inserida", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = SessionResponse.class))),
+		@ApiResponse(responseCode = "400", description = "J√° possui uma sess√£o cadastrada",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = BusinessExceptionBody.class))),
+		@ApiResponse(responseCode = "500", description = "Sistema indisponivel",content=@Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) })
 @Operation(summary = Constants.SESSION_INSERT_SUMMARY, description = Constants.SESSION_INSERT_DESCRIPTION)
 public @interface SessionResponsePostCodeStandard {
 

@@ -1,0 +1,53 @@
+version: '3.1'
+services:
+  db:
+      image: postgres
+      restart: always
+      environment:
+         POSTGRES_DB: API_VOTACAO
+         POSTGRES_USER: postgres
+         POSTGRES_PASSWORD: postgres
+      ports:
+        - "15432:5432"
+      networks:
+        - redelocal
+      
+  votacao:
+
+        image: votacao
+
+        restart: always
+
+        ports:
+           - "8887:8887"
+
+        working_dir: /app
+
+        build:
+          context: .
+          dockerfile: Dockerfile
+
+        command: mvn spring-boot:run 
+
+        depends_on:
+          - db
+        networks:
+        - redelocal
+        environment:
+          - "SPRING_PROFILES_ACTIVE=dev"
+
+  pgAdmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "fabiokopezinski@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "124578"
+    ports:
+      - "16543:80"
+    depends_on:
+      -  votacao
+    networks:
+      - redelocal
+
+networks:
+   redelocal:
+        driver: bridge

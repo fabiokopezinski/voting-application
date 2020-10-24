@@ -12,7 +12,7 @@ public class Constants {
 	public static final String ASSOCIADO_INSERT_DESCRIPTION="Ira realizar um cadastro de um associado"; 
 	
 	public static final String ASSOCIATES_DELETE_SUMMARY="Deletar um associado";
-	public static final String ASSOCIADO_DELETE_DESCRIPTION="Ira realizar uma exclus„o de um associado"; 
+	public static final String ASSOCIADO_DELETE_DESCRIPTION="Ira realizar uma exclus√£o de um associado"; 
 	
 	public static final String MEETING_AGENDA_LIST_SUMMARY = "Listar pautas cadastradas";
 	public static final String MEETING_AGENDA_LIST_DESCRIPTION = "Ira realizar uma listagem das pautas";
@@ -23,11 +23,11 @@ public class Constants {
 	public static final String VOTE_INSERT_SUMMARY = "Votar";
 	public static final String VOTE_INSERT_DESCRIPTION = "Ira realizar um voto"; 
 	
-	public static final String SESSION_INSERT_SUMMARY="Cadastrar uma sess„o";
-	public static final String SESSION_INSERT_DESCRIPTION="Ira comeÁar uma votaÁ„o";
+	public static final String SESSION_INSERT_SUMMARY="Cadastrar uma sess√£o";
+	public static final String SESSION_INSERT_DESCRIPTION="Ira come√ßar uma vota√ß√£o";
 	
-	public static final String SESSION_LIST_SUMMARY="Listar sessıes finalizadas";
-	public static final String SESSION_LIST_DESCRIPTION="Ira realizar uma listagem das sessıes finalizadas";
+	public static final String SESSION_LIST_SUMMARY="Listar sess√µes finalizadas";
+	public static final String SESSION_LIST_DESCRIPTION="Ira realizar uma listagem das sess√µes finalizadas";
 
 
 }

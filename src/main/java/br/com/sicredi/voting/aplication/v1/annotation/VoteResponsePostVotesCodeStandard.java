@@ -19,10 +19,10 @@ import javassist.NotFoundException;
 @Target({ ElementType.METHOD, ElementType.ANNOTATION_TYPE, ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 @ApiResponses(value = {
-		@ApiResponse(responseCode = "201", description = "Sess„o inserida", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = VoteResponse.class))),
-		@ApiResponse(responseCode = "404", description = "N„o encontrado",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = NotFoundException.class))),
-		@ApiResponse(responseCode = "400", description = "RequisiÁ„o inv·lida",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = BusinessExceptionBody.class))),
-		@ApiResponse(responseCode = "500", description = "Sistema indisponÌvel",content=@Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) })
+		@ApiResponse(responseCode = "201", description = "Sess√£o inserida", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = VoteResponse.class))),
+		@ApiResponse(responseCode = "404", description = "N√£o encontrado",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = NotFoundException.class))),
+		@ApiResponse(responseCode = "400", description = "Requis√£o inv√°lida",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,schema = @Schema(implementation = BusinessExceptionBody.class))),
+		@ApiResponse(responseCode = "500", description = "Sistema indisponivel",content=@Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) })
 @Operation(summary = Constants.VOTE_INSERT_SUMMARY, description = Constants.VOTE_INSERT_DESCRIPTION)
 public @interface VoteResponsePostVotesCodeStandard {
 
