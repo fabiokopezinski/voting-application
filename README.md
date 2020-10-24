@@ -25,4 +25,6 @@ Crie uma solução de backend para ser executada em nuvem que proveja as seguint
   + Java Message Service
 
 # Executando o projeto
-  + [Heroku](https://sicredi-pauta.herokuapp.com/v1/swagger)
+  + [Heroku](https://sicredi-pauta.herokuapp.com/v1/swagger) - Heroku
+  + ou 
+  + Docker: docker-compose up --build
