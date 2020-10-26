@@ -27,6 +27,5 @@ Crie uma solução de backend para ser executada em nuvem que proveja as seguint
 # Executando o projeto
   + [Heroku](https://sicredi-pauta.herokuapp.com/v1/swagger) - Heroku
   + ou 
-  + Docker: 
-  + mvn clean install 
-  + docker-compose up --build
+  + Docker: mvn clean install , docker-compose up --build
+  + Url Docker: localhost:8887/v1/swagger
