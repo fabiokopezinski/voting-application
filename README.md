@@ -19,7 +19,7 @@ Crie uma solução de backend para ser executada em nuvem que proveja as seguint
   + Associate
   
 # Ferramentas 
-  + Java
+  + Java 8
   + Spring boot
   + Postgresql
   + Java Message Service
