@@ -7,6 +7,7 @@ services:
          POSTGRES_DB: API_VOTACAO
          POSTGRES_USER: postgres
          POSTGRES_PASSWORD: postgres
+         CREATE DATABASE: API_VOTACAO
       ports:
         - "15432:5432"
       networks:
